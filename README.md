@@ -1,1 +1,2 @@
-# FlazeFy.github.io
+# FlazeFy
+# First Test
