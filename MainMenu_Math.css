@@ -1,0 +1,155 @@
+body{
+    background-color: #212121;
+    display: flex;
+    position: relative;
+}
+.title {
+    color: white;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/*Navigation Tab*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    max-width: 200px;
+    background-color: #111111;
+    height: 100%; 
+    position: fixed; 
+    overflow: auto; 
+}
+li {
+    text-align: center;
+    border-bottom: 2px solid whitesmoke;
+}
+li a {
+    display: block;
+    color: whitesmoke;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+}
+li a:hover {
+    background-color: #768cdd;
+}
+.active {
+    background-color: #4d6ddd;
+    color: white;
+}
+li:last-child {
+    border-bottom: none;
+}
+
+.mathgroup{
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    position: relative;
+}
+
+/*Operasi Dasar*/
+.title2 {
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    font-size: 19px;
+}
+input{
+    display: block;
+    border: none;
+    color: #212121;
+    border-bottom: solid 3px #ddd;
+    margin-bottom: 15px;
+    padding: 10px 0;
+    font-size: 16px;
+    border-radius: 8px;
+    font-family: 'Segoe UI';
+    transition: all 300ms;
+    text-align: center;
+    width: 80%;
+    max-width: 90%;
+}
+input:hover{
+    border-bottom-color: #f162ff;
+}
+input:focus{
+    background-color: #badc58;
+    border: none;
+}
+button{
+    font-family: 'Segoe UI';
+    border: none;
+    background: #f162ff;
+    transition: all 300ms;
+    padding: 10px 40px;
+    font-size: 15px;
+    color: white;
+    border-radius: 5px;
+    margin: 5px auto;
+    width: 30%;
+    text-align: center;
+}
+.btnwrap {
+    text-align: left;
+    position: relative;
+}
+.outwrap {
+    text-align: left;
+    position: relative;
+}
+button:hover{
+    cursor: pointer;
+    background: #4d6ddd;
+}
+.dasarBox{
+    border: solid;
+    padding: 40px 60px;
+    border-radius: 6px;
+    border-color: whitesmoke;
+    justify-content: center;
+    margin-top: 5px;
+    margin-left: 25%;
+    width: 55%;
+    max-width: 120%;
+}
+.output{
+    color: #45ff83;
+    font-family: 'Segoe UI';
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Cek Bilagan*/
+.cekBox{
+    border: solid;
+    padding: 40px 60px;
+    border-radius: 6px;
+    border-color: whitesmoke;
+    justify-content: center;
+    margin-top: 5px;
+    margin-left: 25%;
+    width: 55%;
+    max-width: 120%;
+}
+
+footer {
+    font-weight: bold;
+    font-size: 18px;
+	position: fixed;
+    text-align: center;
+  	bottom: 0;
+    justify-items: center;
+  	width: 100%;
+    height: 30px;
+    background-color: #4d6ddd;
+  	color: white;
+    vertical-align: top;
+}

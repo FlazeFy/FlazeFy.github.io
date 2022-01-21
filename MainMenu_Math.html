@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UltiLator</title>
+	<link type="text/css" rel="stylesheet" href="MainMenu_Math.css">
+</head>
+<body>
+	<!--Navigation menu.-->
+	<div class="Navigation">
+		<ul>
+			<li class="active"><a href="MainMenu_Math.html">Matematika</a></li>
+			<li><a href="MainMenu_Phys.html">Fisika</a></li>
+			<li><a href="">Pemograman</a></li>
+			<li style="float:bottom"><a href="">Bantuan</a></li>
+
+		</ul>
+	</div>
+
+	<!--Operasi Dasar.-->
+	<div class="mathgroup">
+	<div class="dasarBox">
+		<div class="title">Operasi Dasar</div>
+            <br>
+            <!--Input nilai 1-->
+	  		<input type="number" class="input1" id="a" placeholder="Nilai A">
+		    <input type="number" class="input1" id="b" placeholder="Nilai B">
+		    <br>
+            <!--Button-->
+            <div class="title2">Metode</div>
+			<div class="btnwrap">
+            	<button onclick="pythagoras();">Pythagoras</button>
+            	<button onclick="penjumlahan();">Penjumlahan</button>
+            	<button onclick="pengurangan();">Pengurangan</button>
+            <br>
+            	<button onclick="perkalian();">Perkalian</button>
+            	<button onclick="pembagian();">Pembagian</button>
+            	<button onclick="modulo();">Modulo</button>
+            <br>
+            	<button onclick="division();">Division</button>
+				<button onclick="gcd();">GCD</button>
+				<button onclick="lcm();">LCM</button>
+            <br>
+			</div>
+            <!--Output1-->
+            <div class="title2">Hasil</div>
+		    <div class="form-group">
+		      	<input type="number" class="output" id="hasil" disabled>
+		    </div>
+			</div>
+
+	<!--Cek Bilangan.-->
+	<div class="cekBox">
+			<div class="title">Cek Bilangan</div>
+			<br>
+			<!--Input nilai 1-->
+				<input type="number" class="input1" id="cek" placeholder="Nilai A">
+		    <br>
+			<!--Button-->
+			<div class="btnwrap">
+            	<button onclick="cekBil();">Cek</button>
+			<!--Output1-->
+			<br>
+            <div class="title2">Hasil</div>
+		    <div class="form-group">
+		      	<input type="text" class="output" id="hasil2" disabled>
+		    </div>
+	</div>
+    </div>
+
+	<!--1 Bilangan.-->
+	<div class="cekBox">
+		<div class="title">1 Bilangan</div>
+		<br>
+		<!--Input nilai 1-->
+			<input type="number" class="input2" id="cek2" placeholder="Nilai A">
+		<br>
+		<!--Button-->
+		<div class="btnwrap">
+			<button onclick="kuadrat();">^2</button>
+		<!--Output1-->
+		<br>
+		<div class="title2">Hasil</div>
+		<div class="form-group">
+			  <input type="text" class="output" id="hasil3" disabled>
+		</div>
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		//Operasi Dasar.
+		//Fungsi menghitung pythagoras.
+        function pythagoras(){
+			a = document.getElementById("a").value;
+			b = document.getElementById("b").value;
+			hasil_pyt = (a*a + b*b);
+			document.getElementById("hasil").value = Math.sqrt(hasil_pyt);
+		}
+
+        //Fungsi menghitung penjumlahan.
+        function penjumlahan(){
+			a = document.getElementById("a").value;
+			b = document.getElementById("b").value;
+            hasil_jum = parseInt(a) + parseInt(b);
+			document.getElementById("hasil").value = hasil_jum;
+		}
+
+        //Fungsi menghitung pengurangan.
+        function pengurangan(){
+			a = document.getElementById("a").value;
+			b = document.getElementById("b").value;
+            hasil_kur = parseInt(a) - parseInt(b);
+			document.getElementById("hasil").value = hasil_kur;
+		}
+
+        //Fungsi menghitung perkalian.
+        function perkalian(){
+			a = document.getElementById("a").value;
+			b = document.getElementById("b").value;
+            hasil_kal = parseInt(a) * parseInt(b);
+			document.getElementById("hasil").value = hasil_kal;
+		}
+
+        //Fungsi menghitung pembagian.
+        function pembagian(){
+			a = document.getElementById("a").value;
+			b = document.getElementById("b").value;
+            hasil_bag = parseInt(a) / parseInt(b);
+			document.getElementById("hasil").value = hasil_bag;
+		}
+
+        //Fungsi menghitung modulo.
+        function modulo(){
+			a = document.getElementById("a").value;
+			b = document.getElementById("b").value;
+            hasil_mod = parseInt(a) % parseInt(b);
+			document.getElementById("hasil").value = hasil_mod;
+		}
+
+		//Fungsi menghitung division.
+        function division(){
+			a = document.getElementById("a").value;
+			b = document.getElementById("b").value;
+            hasil_div = parseInt(a) / parseInt(b);
+			document.getElementById("hasil").value = Math.round(hasil_div);
+		}
+
+		//Fungsi menghitung gcd.
+        function gcd(){
+			a = document.getElementById("a").value;
+			b = document.getElementById("b").value;
+			a = Math.abs(a);
+			b = Math.abs(b);
+			while(b) {
+				var c = b;
+				b = a % b;
+				a = c;
+			}
+			document.getElementById("hasil").value = a;
+		}
+
+		//Fungsi menghitung lcm.
+        function lcm(){
+			a = document.getElementById("a").value;
+			b = document.getElementById("b").value;
+			a = Math.abs(a);
+			b = Math.abs(b);
+			function gcd_2(){
+				while(b) {
+					var c = b;
+					b = a % b;
+					a = c;
+				}
+				return a;
+			}
+			hasil_lcm = Math.abs((a * b) / gcd_2(a, b));
+			document.getElementById("hasil").value = hasil_lcm;
+		}
+
+		//Cek Bilangan.
+		function cekBil(){
+			cek = document.getElementById("cek").value;
+			//Cek ganjil genap
+			var odd;
+			if(cek % 2 == 0){
+				odd = "Genap"; 
+			} else {
+				odd = "Ganjil";
+			}
+
+			//Cek Prima
+			var i;
+			var prime = "Prima";
+			for(i = 2; i <= cek - 1; i++){
+				if(cek % i == 0){
+					prime = "Komposit";
+				}
+			}
+			document.getElementById("hasil2").value = odd + " & " +prime;
+		}
+
+		//Kuadrat
+		function kuadrat(){
+			cek = document.getElementById("cek2").value;
+			var cek2;
+			cek2 = cek*cek;
+
+			document.getElementById("hasil3").value = cek2;
+		}
+	</script>
+	<footer>
+		<h>FlazeFy</h>
+	</footer>
+</body>
+</html>

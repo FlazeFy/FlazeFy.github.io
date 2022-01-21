@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UltiLator</title>
+	<link type="text/css" rel="stylesheet" href="MainMenu_Phys.css">
+</head>
+<body>
+	<!--Navigation menu.-->
+	<div class="Navigation">
+		<ul>
+			<li><a href="MainMenu_Math.html">Matematika</a></li>
+			<li class="active"><a href="MainMenu_Phys.html">Fisika</a></li>
+			<li><a href="">Pemograman</a></li>
+			<li style="float:bottom"><a href="">Bantuan</a></li>
+		</ul>
+	</div>
+
+	<!--Operasi Temperatur.-->
+	<div class="tempBox">
+		<div class="title">Operasi Temperatur</div>
+            <br>
+            <!--Input nilai 1-->
+			<form name="form1" action="#">
+	  		<input type="number" class="input1" id="a" name="a" placeholder="Nilai A">
+		    <br>
+           
+            <!--Button-->
+            <div class="title2">Metode</div>
+			<h class="title3">Dari</h> 
+			<select class="droptemp1" id="drop1" name="drop1">
+					<option value="c">Celcius</option>
+					<option value="f">Fahrenheit</option>
+					<option value="k">Kelvin</option>
+					<option value="r">Reamur</option>
+			</select>
+			<h class="title3">Ke</h>
+			<select class="droptemp2" id="drop2" name="drop2">
+					<option value="c">Celcius</option>
+					<option value="f">Fahrenheit</option>
+					<option value="k">Kelvin</option>
+					<option value="r">Reamur</option>
+			</select>
+			<br><br>
+			<button onclick="hitungSuhu();">Hitung</button>
+			<button onclick="reset();">Reset</button>
+
+            <!--Output1-->
+            <div class="title2">Hasil</div>
+		    <div class="form-group">
+		      	<input type="number" class="output" id="hasil" name="hasil" disabled>
+		    </div>
+		</form>
+    </div>
+	
+	<script type="text/javascript">
+		//Fungsi menghitung suhu.
+        function hitungSuhu(){
+			//Ambil nilai dan operasi
+			var a = document.form1.a.value;
+			var pil = document.form1.drop1.value;
+			var pil2 = document.form1.drop2.value;
+
+			// Celcius ke Fahrenheit
+			if((pil == 'c') && (pil2 == 'f')){
+				hasil_temp = (parseInt(a) * 9/5) + 32;
+			// Celcius ke Kelvin
+			} else if((pil == 'c') && (pil2 == 'k')){
+				hasil_temp = (parseInt(a) + 273.15);
+			// Celcius ke Reamur
+			} else if((pil == 'c') && (pil2 == 'r')){
+				hasil_temp = (parseInt(a) * 4 / 5);
+
+			// Fahrenheit ke Celcius
+			} else if((pil == 'f') && (pil2 == 'c')){
+				hasil_temp = (5/9 * (parseInt(a)-32));
+			// Fahrenheit ke Reamur
+			} else if((pil == 'f') && (pil2 == 'r')){
+				hasil_temp = (parseInt(a) - 32) * 4/9;
+			// Fahrenheit ke Kelvin
+			} else if((pil == 'f') && (pil2 == 'k')){
+				hasil_temp = (parseInt(a) - 32) * 5/9 + 273.15;
+			
+			// Reamur ke Celcius
+			} else if((pil == 'r') && (pil2 == 'c')){
+				hasil_temp = (parseInt(a) / 4 * 5);	
+			// Reamur ke Fahrenheit
+			} else if((pil == 'r') && (pil2 == 'f')){
+				hasil_temp = (parseInt(a) * 9/4) + 32;
+			// Reamur ke Kelvin
+			} else if((pil == 'r') && (pil2 == 'k')){
+				hasil_temp = (parseInt(a) / 4 * 5) + 273.15;
+
+			// Kelvin ke Celcius
+			} else if((pil == 'k') && (pil2 == 'c')){
+				hasil_temp = (parseInt(a) - 273.15);
+			// Kelvin ke Fahrenheit
+			} else if((pil == 'k') && (pil2 == 'f')){
+				hasil_temp = (parseInt(a) - 273.15) * 9/5 + 32;
+			// Kelvin ke Reamur
+			} else if((pil == 'k') && (pil2 == 'r')){
+				hasil_temp = (parseInt(a) - 273.15) * 4/5;
+			}
+			
+			document.getElementById("hasil").value = hasil_temp;
+		}
+
+		function reset(){
+    		document.form1.reset();
+		}
+	</script>
+	 <footer>
+		<h>FlazeFy</h>
+	</footer>
+</body>
+</html>
