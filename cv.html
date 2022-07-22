@@ -175,6 +175,59 @@
     .text-primary{
       color:#414141 !important;
     }
+    .container-fluid.mb-3.position-fixed{
+      z-index: 999;
+    }
+
+    .experience .experience-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      color: #3b434a;
+    }
+    .experience .experience-item {
+      padding: 0 0 20px 20px;
+      margin-top: -2px;
+      border-left: 2px solid #82909c;
+      position: relative;
+    }
+    .experience .experience-item h4 {
+      line-height: 18px;
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #ffb727;
+      margin-bottom: 10px;
+    }
+    .experience .experience-item h5 {
+      font-size: 16px;
+      background: #eef0f2;
+      padding: 5px 15px;
+      display: inline-block;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .experience .experience-item ul {
+      padding-left: 20px;
+    }
+    .experience .experience-item ul li {
+      padding-bottom: 10px;
+    }
+    .experience .experience-item:last-child {
+      padding-bottom: 0;
+    }
+    .experience .experience-item::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50px;
+      left: -9px;
+      top: 0;
+      background: #fff;
+      border: 2px solid #82909c;
+    }
   </style>
 
   </head>
@@ -186,7 +239,7 @@
                 style='display: block; margin-left: auto; margin-right: auto;'>
 
             <div class='container-fluid p-2 mt-3 rounded-3' title='Click to open profile' type='button'>
-              <img class="img logo rounded-circle mb-3" src="" alt=""
+              <img class="img logo rounded-circle mb-3" src="leo.jpg" alt=""
                 style='display: block; margin-left: auto; margin-right: auto;'>
               <ul class="list-inline list-social-icons mx-auto">
                 <li class="list-inline-item" title="Get Contact">
@@ -242,19 +295,19 @@
 
             <ul class="list-unstyled components mb-3">
               <li class="active">
-                  <a href="#"><i class="fa-solid fa-user"></i> About Me</a>
+                  <a href="#aboutme"><i class="fa-solid fa-user"></i> About Me</a>
               </li>
               <li>
-              <a href="#"><i class="fa-solid fa-sitemap"></i> Experience</a>
+              <a href="#experience"><i class="fa-solid fa-sitemap"></i> Experience</a>
               </li>
               <li>
-                  <a href="#"><i class="fa-solid fa-code"></i> Skills</a>
+                  <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
               </li>
               <li>
-                  <a href="#"><i class="fa-solid fa-folder-closed"></i> Project</a>
+                  <a href="#project"><i class="fa-solid fa-folder-closed"></i> Project</a>
               </li>
               <li>
-                  <a href="#"><i class="fa-solid fa-thumbs-up"></i> Feedback</a>
+                  <a href="#feedback"><i class="fa-solid fa-thumbs-up"></i> Feedback</a>
               </li>
             </ul><!--End of Menu item.-->
           </div>
@@ -262,22 +315,96 @@
 
         <!--Page Content.-->
         <div id="content" class="p-4 p-md-5" style='width:100%; max-height: calc(90vh - 140px); overflow-x: auto;'>
-          <div class="container-fluid mb-3">
-              <button type="button" id="sidebarCollapse" class="btn btn-primary">
-              <i class="fa fa-bars"></i>
-              <span class="sr-only">Toggle Menu</span>
-              </button>
+          <!--Toogle sidebar-->
+          <div class="container-fluid mb-3 position-fixed">
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Toggle Menu</span>
+            </button>
           </div>
 
-          <div class='container-fluid p-3 mb-3 rounded' style='background:white;'>
-              <h3 class="text-primary mb-2">Hello there, My name is Leo</h3>
-              <div class="row">
-                  
+          <div class='container-fluid p-3 mb-3 mt-5 rounded' style='background:white;' id="aboutme">
+            <h3 class="text-primary mb-2">Hello there, My name is Leo</h3>
+            <div class="row">
+              <div class="col-md-3">
+                <img class="img logo rounded-circle mb-3 w-75" src="leo.jpg" alt=""
+                  style='display: block; margin-left: auto; margin-right: auto; max-width: 200px;'>
               </div>
+              <div class="col-md-5">
+                <h6 class="text-primary m-2 mt-3">FullName : <span class="text-secondary">Leonardho R. Sitanggang</span></h6>
+                <h6 class="text-primary m-2">Date Of Birth : <span class="text-secondary">Leonardho R. Sitanggang</span></h6>
+                <h6 class="text-primary m-2">Address : <span class="text-secondary">Jl. Belut Expo, Waena, Heram</span></h6>
+                <h6 class="text-primary m-2">City : <span class="text-secondary">Jayapura</span></h6>
+                <h6 class="text-primary m-2">Gender : <span class="text-secondary">Male</span></h6>
+              </div>
+              <div class="col-md-4">
+                <h6 class="text-primary m-2 mt-3">Age : <span class="text-secondary">21</span></h6>
+                <h6 class="text-primary m-2">Bachelor : <span class="text-secondary">Software Engineer</span></h6>
+                <h6 class="text-primary m-2">Phone : <span class="text-secondary">+62 8114 8882 001</span></h6>
+                <h6 class="text-primary m-2">Email : <span class="text-secondary">flazen.edu@gmail.com</span></h6>
+                <h6 class="text-primary m-2">Last Education : <span class="text-secondary">Senior High School</span></h6>
+              </div>
+            </div>
           </div>
-        </div>
 
-    </div>
+          <div class='container-fluid p-3 mb-3 rounded experience' style='background:white;' id="experience">
+            <h3 class="text-primary mb-2">Experience</h3>
+            <div class="row">
+              <div class="col-lg-6">
+                <h3 class="experience-title">Education</h3>
+                <div class="experience-item">
+                  <h4>SMAN 4 Jayapura</h4>
+                  <h5>2016 - 2019</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="experience-item">
+                  <h4>Bachelor of Software Engineer <span class="text-success fw-normal">(On-Going)</span></h4>
+                  <h5>2019 - Present</h5>
+                  <p><em>Telkom University, Bandung</em></p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <h3 class="experience-title">Professional Experience</h3>
+                <div class="experience-item">
+                  <h4>Laravel Developer <span class="text-secondary">(Internship)</span></h4>
+                  <h5>2022</h5>
+                  <p><em>Bandung Techno Park, Bandung</em></p>
+                  <p>
+                  <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                  </ul>
+                  </p>
+                </div>
+              </div>
+            </div>
+      
+          
+          </div>
+
+          <div class='container-fluid p-3 mb-3 rounded' style='background:white;' id="skills">
+            <h3 class="text-primary mb-2">Skills</h3>
+            <div class="row">
+                
+            </div>
+          </div>
+
+          <div class='container-fluid p-3 mb-3 rounded' style='background:white;' id="project">
+            <h3 class="text-primary mb-2">Project</h3>
+            <div class="row">
+                
+            </div>
+          </div>
+
+          <div class='container-fluid p-3 mb-3 rounded' style='background:white;' id="feedback">
+            <h3 class="text-primary mb-2">Feedback</h3>
+            <div class="row">
+                
+            </div>
+          </div>
+        </div><!--End of page content.-->
+
+      </div>
 
     <script>
       //Sidebar setting.
