@@ -301,6 +301,32 @@
       margin-bottom: 20px;
       color: #3b434a;
     }
+    .bg_wrapper {
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 200px;
+        padding-left: 50px;
+        padding-left: 50px;
+        padding-bottom: 70px;
+    }
+
+    #project_features a{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4; 
+          line-clamp: 4; 
+      -webkit-box-orient: vertical;
+    }
+
+    #project_description a{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 5; 
+          line-clamp: 5; 
+      -webkit-box-orient: vertical;
+    }
   </style>
 
   </head>
@@ -378,6 +404,9 @@
               </li>
               <li>
                   <a href="#project"><i class="fa-solid fa-folder-closed"></i> Project</a>
+              </li>
+              <li>
+                <a href="#reference"><i class="fa-solid fa-circle-info"></i> Reference</a>
               </li>
               <li>
                   <a href="#feedback"><i class="fa-solid fa-thumbs-up"></i> Feedback</a>
@@ -460,12 +489,15 @@
             <div class="row">
               <div class="col-lg-6">
                 <h3 class="skills-title">Hard-Skill</h3>
-                
                 <li class="skills-item">Disicpline</li>
                 <li class="skills-item">Hard-Work</li>
                 <li class="skills-item">Diligent</li>
                 <li class="skills-item">Time Management</li>
                 <li class="skills-item">Open Minded</li>
+
+                <h3 class="skills-title">Language</h3>
+                <li class="skills-item">Indonesian</li>
+                <li class="skills-item">English</li>
               </div>
               <div class="col-lg-6">
                 <h3 class="skills-title">Soft-Skill</h3>
@@ -514,7 +546,7 @@
             </div>
           </div>
 
-          <div class='container-fluid p-3 mb-3 rounded project' style='background:white;' id="project">
+          <div class='container-fluid p-3 mb-3 rounded project bg_wrapper bg-white' style="background-image: url('assets/wave.svg');" id="project">
             <h3 class="text-primary mb-2">Project</h3>
             <div class="row">
               <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
@@ -549,18 +581,69 @@
                 </div>
               </div>
             </div>
+
             <h3 class="project-title">All Projects</h3>
+            <div class="row p-1">
 
-          </div>
+              <div class="col-md-6 col-lg-6 d-flex align-items-stretch my-2">
+                <div class="container-fluid p-4 bg-white rounded shadow">
+                  <div class="row">
+                    <div class="col-md">
+                      <h5 class="text-dark"><i class="fa-solid fa-folder-closed" style="color:#22A7f0;"></i> Culineira</h5>
+                      <div id="project_description">
+                        <a class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                      </div><hr>
+                      <a class="text-secondary"><i class="fa-solid fa-calendar-day" style="color:#22A7f0;"></i> 1 July 2022 - Present &nbsp &nbsp<i class="fa-solid fa-user" style="color:#22A7f0;"></i> 1</a>
+                    </div>
+                    <div class="col-md">
+                      <h7 class="text-secondary"><i class="fa-solid fa-code" style="color:#22A7f0;"></i> HTML, CSS, Javascript, Jquery, Php, Bootstrap 5, Laravel 9</h7><br>
+                      <div id="project_features">
+                        <a class="text-secondary"><b style="color:#22A7f0;">Features</b> Recipes, Cook List, Forum, Classroom Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</a>
+                      </div>
+                      <button class="btn btn-transparent d-block mx-auto text-dark">Open Repository</button>
+                      <button class="btn btn-success w-75 d-block mx-auto"><i class="fa-solid fa-arrow-right"></i> See Detail</button>
+                    </div>
+                  </div>
+                </div>
+              </div><!--End of item.-->
 
-          <div class='container-fluid p-3 mb-3 rounded' style='background:white;' id="feedback">
-            <h3 class="text-primary mb-2">Feedback</h3>
-            <div class="row">
-                
+            </div>
+
+            <div class="card border-2 bg-transparent border-white p-3 m-2 mt-4 w-50">
+              <h3 class="project-title text-white">Attention</h3>
+              <a class="text-white"><i class="fa-solid fa-circle-info"></i> If you want to collaboration and so on. You can contact me.</a>  
             </div>
           </div>
-        </div><!--End of page content.-->
 
+          <div class="row">
+            <div class="col-md">
+              <div class='container-fluid p-3 mb-3 rounded' style='background:white;' id="reference">
+                <h3 class="text-primary mb-2">Reference</h3>
+                <div class="row">
+                    
+                </div>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class='container-fluid p-3 mb-3 rounded' style='background:white;' id="feedback">
+                <h3 class="text-primary mb-2">Feedback</h3>
+                <h6 class="text-primary"> What do you think about my CV?</h6>  
+                <textarea class="form-control m-3 w-75" rows="3" placeholder="type your feedback here..." required></textarea>
+                <h6 class="text-primary"> Also, please leave me a rating</h6>  
+                  <label class="form-label" for="customRange2">(Lowest) 0  - 10 (Highest)</label>
+                  <a class="text-secondary float-end" ><span id="ratingShow">-</span> Stars</a>
+                  <div class="range">
+                    <input type="range" class="form-range" min="0" max="10" id="customRange2" />
+                  </div>
+                <a class="text-secondary"><i class="fa-solid fa-circle-info"></i> Your feedback is anonymous and not will be displayed</a>  
+                <button class="btn btn-success m-1"><i class="fa-solid fa-paper-plane"></i> Send</button>
+              </div>
+            </div>
+          </div>
+          
+          <br>
+          <p class="text-center text-primary">Copyright &copy; 2022 All rights reserved.</p>
+        </div><!--End of page content.-->
       </div>
 
     <script>
@@ -578,6 +661,11 @@
       $('#sidebar').toggleClass('active');
       });
       })(jQuery);
+
+      //Rating range
+      $("input[type=range]").on("change input", function() {
+        $("#ratingShow").text($(this).val())
+      })
     </script>
 
     <!--Others CDN.-->
